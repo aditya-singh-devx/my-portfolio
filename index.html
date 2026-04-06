@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aditya Singh | Professional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+
+  <div id="scroll-progress"></div>
+
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
+
+  <button id="backToTop" class="btn btn-accent rounded-circle shadow-lg">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold fs-4" href="#hero">Aditya<span class="text-accent">.</span></a>
+      
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars-staggered"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-3 text-center mt-3 mt-lg-0 fw-semibold">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#coding-stats">Stats</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="d-flex gap-3 justify-content-center mt-3 mt-lg-0 ms-lg-4">
+          <a href="https://github.com/aditya-singh-devx" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/imaadix" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          
+          <a href="https://leetcode.com/u/aditya-singh-devx/" target="_blank" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.2em" height="1.2em"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.939 5.939 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.099l2.396-2.41a1.376 1.376 0 0 0-.012-1.954 1.378 1.378 0 0 0-1.95.011l-2.395 2.408c-.732.735-1.921.751-2.68.04l-.04-.04-4.276-4.193a3.197 3.197 0 0 1-.683-.974 3.035 3.035 0 0 1-.186-.546 2.977 2.977 0 0 1-.035-1.271 2.87 2.87 0 0 1 .067-.275 2.825 2.825 0 0 1 .65-1.135l3.854-4.126L12.522 3.1a1.38 1.38 0 0 0 .012-1.955 1.37 1.37 0 0 0-.962-.439zm1.066 9.873c-.664 0-1.203.538-1.203 1.203s.539 1.203 1.203 1.203h6.814c.664 0 1.202-.538 1.202-1.203s-.538-1.203-1.202-1.203h-6.814zm-4.331 4.502a1.374 1.374 0 0 0-.962.438l-2.28 2.293a1.378 1.378 0 0 0 .011 1.954 1.376 1.376 0 0 0 1.95-.011l2.28-2.293a1.38 1.38 0 0 0-.012-1.955 1.37 1.37 0 0 0-.961-.439h-.026z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center">
+        <div class="col-md-7 fade-in">
+          <h2 class="text-secondary fw-light mb-2">Hello, I'm</h2>
+          <h1 class="display-2 fw-bold text-white mb-3">Aditya Singh</h1>
+          <h3 class="fs-4 text-light mb-4">I am a <span class="text-accent auto-type"></span></h3>
+          <p class="text-muted lead mb-5" style="max-width: 500px;">
+            Crafting responsive, high-performance web applications and building engaging digital communities.
+          </p>
+          <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+            <a href="#projects" class="btn btn-accent px-4 py-2 rounded-pill shadow-lg">View Projects</a>
+            <a href="resume.pdf" class="btn btn-outline-light px-4 py-2 rounded-pill">Download CV</a>
+          </div>
+        </div>
+        <div class="col-md-5 mt-5 mt-md-0 text-center fade-in delay-1">
+          <div class="profile-img-container shadow-lg">
+            <img src="images/profile.jpg" alt="Aditya Singh" class="profile-img" onerror="this.src='https://via.placeholder.com/400?text=Profile+Image'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="container py-5 mt-5 fade-in">
+    <div class="row gx-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2 class="section-title mb-4">About Me</h2>
+        <p class="text-muted lh-lg">
+          I am a driven BCA student at PSIT College (2024–2027) specializing in frontend technologies and programmatic logic. 
+          My focus is on writing clean, elegant, and efficient code to solve real-world problems. Whether it's designing a user interface or writing backend logic, I bring a detail-oriented approach to my work.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h2 class="section-title mb-4">Education</h2>
+        <div class="timeline-box p-4 glass-card premium-card">
+          <h5 class="text-white fw-bold mb-1">Bachelor of Computer Applications (BCA)</h5>
+          <p class="text-accent mb-2">PSIT College of Higher Education</p>
+          <p class="text-muted small m-0"><i class="fas fa-calendar-alt me-2"></i>2024 - 2027</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="container py-5 fade-in">
+    <h2 class="section-title text-center mb-5">Professional Skills</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 col-lg-2"><div class="skill-box"><i class="fab fa-html5 text-orange"></i><span>HTML5</span></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="skill-box"><i class="fab fa-css3-alt text-blue"></i><span>CSS3</span></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="skill-box"><i class="fab fa-js text-yellow"></i><span>JavaScript</span></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="skill-box"><i class="fab fa-bootstrap text-purple"></i><span>Bootstrap</span></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="skill-box"><i class="fab fa-python text-info"></i><span>Python</span></div></div>
+    </div>
+  </section>
+
+  <section id="services" class="container py-5 mt-4 fade-in">
+    <h2 class="section-title text-center mb-5">What I Do</h2>
+    <div class="row g-4">
+      <div class="col-md-4 fade-in">
+        <div class="glass-card p-4 text-center premium-card h-100">
+          <i class="fas fa-laptop-code fa-3x text-accent mb-3"></i>
+          <h4 class="text-white fw-bold">Web Development</h4>
+          <p class="text-muted mt-2">Building responsive, fast, and highly functional websites using modern front-end technologies.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-in delay-1">
+        <div class="glass-card p-4 text-center premium-card h-100">
+          <i class="fas fa-bullhorn fa-3x text-accent mb-3"></i>
+          <h4 class="text-white fw-bold">Community Management</h4>
+          <p class="text-muted mt-2">Growing and managing digital communities with engaging content and strategic interaction.</p>
+        </div>
+      </div>
+      <div class="col-md-4 fade-in delay-2">
+        <div class="glass-card p-4 text-center premium-card h-100">
+          <i class="fas fa-mobile-alt fa-3x text-accent mb-3"></i>
+          <h4 class="text-white fw-bold">Responsive Design</h4>
+          <p class="text-muted mt-2">Ensuring web applications look pixel-perfect and work smoothly across all devices and screen sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="container py-5 fade-in">
+    <h2 class="section-title text-center mb-5">Experience & Leadership</h2>
+    <div class="glass-card p-4 mx-auto premium-card" style="max-width: 800px;">
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h4 class="text-white fw-bold m-0"><i class="fab fa-instagram me-2 text-accent"></i>Community Manager</h4>
+        <span class="badge bg-accent px-3 py-2 rounded-pill mt-2 mt-md-0">Present</span>
+      </div>
+      <h6 class="text-secondary mb-3">@hey_psit • PSIT College</h6>
+      <p class="text-muted m-0">
+        Leading the official community page for PSIT College on Instagram. Responsible for digital content strategy, audience engagement, graphic curation, and maintaining the dynamic online presence of the student community.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="container py-5">
+    <h2 class="section-title text-center mb-5 fade-in">Featured Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-6 fade-in">
+        <div class="glass-card project-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <i class="fas fa-qrcode fa-2x text-accent"></i>
+            <a href="https://github.com/aditya-singh-devx" target="_blank" class="project-link"><i class="fab fa-github fs-4"></i></a>
+          </div>
+          <h4 class="text-white fw-bold">College Event Management</h4>
+          <p class="text-muted mt-2">A comprehensive system developed with a QR code generation feature and secure authentication to streamline college event entry and management.</p>
+          <div class="mt-4 pt-3 border-top border-secondary d-flex gap-2">
+            <span class="badge bg-dark border border-secondary">HTML/CSS</span>
+            <span class="badge bg-dark border border-secondary">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 fade-in delay-1">
+        <div class="glass-card project-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <i class="fas fa-building fa-2x text-accent"></i>
+            <a href="https://github.com/aditya-singh-devx" target="_blank" class="project-link"><i class="fab fa-github fs-4"></i></a>
+          </div>
+          <h4 class="text-white fw-bold">Smart Hostel Management</h4>
+          <p class="text-muted mt-2">A digital solution designed to efficiently manage student records, room allocations, attendance tracking, and administrative tasks.</p>
+          <div class="mt-4 pt-3 border-top border-secondary d-flex gap-2">
+            <span class="badge bg-dark border border-secondary">Frontend</span>
+            <span class="badge bg-dark border border-secondary">Database</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="container py-5 fade-in">
+    <h2 class="section-title text-center mb-5">My Working Process</h2>
+    <div class="row g-4 position-relative justify-content-center">
+      <div class="d-none d-lg-block position-absolute" style="top: 50%; left: 15%; width: 70%; height: 2px; background: rgba(14, 165, 233, 0.2); z-index: 0;"></div>
+
+      <div class="col-12 col-md-6 col-lg-3 text-center fade-in" style="z-index: 1;">
+        <div class="glass-card p-4 premium-card h-100 rounded-circle d-flex flex-column justify-content-center align-items-center mx-auto" style="width: 180px; height: 180px;">
+          <i class="fas fa-lightbulb fa-2x text-warning mb-2"></i>
+          <h5 class="text-white fw-bold mb-1">Ideate</h5>
+          <p class="text-muted small m-0">Research</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 text-center fade-in delay-1" style="z-index: 1;">
+        <div class="glass-card p-4 premium-card h-100 rounded-circle d-flex flex-column justify-content-center align-items-center mx-auto" style="width: 180px; height: 180px;">
+          <i class="fas fa-pen-ruler fa-2x text-info mb-2"></i>
+          <h5 class="text-white fw-bold mb-1">Design</h5>
+          <p class="text-muted small m-0">UI/UX</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 text-center fade-in delay-2" style="z-index: 1;">
+        <div class="glass-card p-4 premium-card h-100 rounded-circle d-flex flex-column justify-content-center align-items-center mx-auto" style="width: 180px; height: 180px;">
+          <i class="fas fa-code fa-2x text-accent mb-2"></i>
+          <h5 class="text-white fw-bold mb-1">Develop</h5>
+          <p class="text-muted small m-0">Coding</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 text-center fade-in" style="z-index: 1; transition-delay: 0.6s;">
+        <div class="glass-card p-4 premium-card h-100 rounded-circle d-flex flex-column justify-content-center align-items-center mx-auto" style="width: 180px; height: 180px;">
+          <i class="fas fa-rocket fa-2x text-danger mb-2"></i>
+          <h5 class="text-white fw-bold mb-1">Deploy</h5>
+          <p class="text-muted small m-0">Launch</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coding-stats" class="container py-5 fade-in">
+    <h2 class="section-title text-center mb-5">Coding Activity & Stats</h2>
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-lg-6 fade-in">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center align-items-center">
+          <h5 class="text-white fw-bold mb-4"><i class="fab fa-github me-2 text-white"></i>GitHub Contributions</h5>
+          <img src="https://github-readme-stats.vercel.app/api?username=aditya-singh-devx&theme=tokyonight&show_icons=true&hide_border=true&bg_color=0B1120" 
+               onerror="this.src='https://github-readme-streak-stats.herokuapp.com/?user=aditya-singh-devx&theme=tokyonight&hide_border=true&background=0B1120';"
+               alt="GitHub Stats" class="img-fluid rounded shadow-sm mb-3" style="max-height: 200px;">
+          <a href="https://github.com/aditya-singh-devx" target="_blank" class="btn btn-outline-light rounded-pill px-4 mt-2 btn-sm">
+            View Live Profile
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 fade-in delay-1">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center align-items-center">
+          <h5 class="text-white fw-bold mb-4"><i class="fas fa-code me-2 text-warning"></i>LeetCode Profile</h5>
+          <img src="https://leetcard.jacoblin.cool/aditya-singh-devx?theme=dark&font=Poppins&ext=activity" 
+               alt="LeetCode Stats" class="img-fluid rounded shadow-sm mb-3" style="max-height: 200px;">
+          <a href="https://leetcode.com/u/aditya-singh-devx/" target="_blank" class="btn btn-outline-warning rounded-pill px-4 mt-2 btn-sm">
+            View Live Profile
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="resume-extras" class="container py-5 fade-in">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2 class="section-title mb-4">Soft Skills</h2>
+        <div class="glass-card p-4 mb-5 premium-card">
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-dark border border-secondary px-3 py-2 fs-6">Leadership</span>
+            <span class="badge bg-dark border border-secondary px-3 py-2 fs-6">Problem Solving</span>
+            <span class="badge bg-dark border border-secondary px-3 py-2 fs-6">Communication</span>
+            <span class="badge bg-dark border border-secondary px-3 py-2 fs-6">Team Work</span>
+          </div>
+        </div>
+
+        <h2 class="section-title mb-4">Languages</h2>
+        <div class="glass-card p-4 premium-card">
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-white fw-semibold">English</span>
+            <span class="text-accent">Professional</span>
+          </div>
+          <div class="progress mb-4" style="height: 8px; background-color: rgba(255,255,255,0.05); border-radius: 10px;">
+            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%; border-radius: 10px;"></div>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-white fw-semibold">Hindi</span>
+            <span class="text-accent">Native</span>
+          </div>
+          <div class="progress" style="height: 8px; background-color: rgba(255,255,255,0.05); border-radius: 10px;">
+            <div class="progress-bar bg-accent" role="progressbar" style="width: 100%; border-radius: 10px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="section-title mb-4">Achievements</h2>
+        <div class="glass-card p-4 premium-card h-100">
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="contact-icon-box" style="background: rgba(234, 179, 8, 0.1);"><i class="fas fa-trophy text-warning"></i></div>
+            <div>
+              <h5 class="text-white fw-bold mb-1">Hackathon Experience</h5>
+              <p class="text-muted small m-0">Actively participate in coding challenges to build logic and solve real-world problems.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="contact-icon-box" style="background: rgba(234, 179, 8, 0.1);"><i class="fas fa-star text-warning"></i></div>
+            <div>
+              <h5 class="text-white fw-bold mb-1">Community Growth</h5>
+              <p class="text-muted small m-0">Successfully managing and growing the digital presence for PSIT's community page.</p>
+            </div>
+          </div>
+           <div class="d-flex align-items-start gap-3">
+            <div class="contact-icon-box" style="background: rgba(234, 179, 8, 0.1);"><i class="fas fa-certificate text-warning"></i></div>
+            <div>
+              <h5 class="text-white fw-bold mb-1">Consistent Learner</h5>
+              <p class="text-muted small m-0">Mastering Python and modern Web Technologies alongside my BCA degree.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies" class="container py-5 fade-in">
+    <h2 class="section-title text-center mb-5">Hobbies & Interests</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-2 fade-in">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-camera-retro fa-2x text-accent mb-3"></i>
+          <h6 class="text-white fw-bold m-0 mt-2">Photography</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-in delay-1">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-plane-departure fa-2x text-accent mb-3"></i>
+          <h6 class="text-white fw-bold m-0 mt-2">Traveling</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-in delay-2">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-headphones-alt fa-2x text-accent mb-3"></i>
+          <h6 class="text-white fw-bold m-0 mt-2">Music</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-in">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-book-open fa-2x text-accent mb-3"></i>
+          <h6 class="text-white fw-bold m-0 mt-2">Reading</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 fade-in delay-1">
+        <div class="glass-card p-4 text-center premium-card h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-film fa-2x text-accent mb-3"></i>
+          <h6 class="text-white fw-bold m-0 mt-2">Movies</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5 fade-in">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2 class="section-title mb-4">Certifications</h2>
+        <div class="glass-card p-4 d-flex align-items-center gap-4 premium-card h-100">
+          <i class="fab fa-meta fa-3x text-primary"></i>
+          <div>
+            <h5 class="text-white fw-bold mb-1">Meta Frontend Developer</h5>
+            <p class="text-muted small mb-3">Professional Certificate</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a href="https://www.coursera.org/account/accomplishments/certificate/RGOGHIM0RSIX" target="_blank" class="btn btn-sm btn-outline-accent rounded-pill px-3">Verify</a>
+              <a href="https://drive.google.com/file/d/1q5fSK8kaIXCP1isB5evVuM7VM5qAyJ4_/view" target="_blank" class="btn btn-sm btn-outline-light rounded-pill px-3">PDF</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <h2 class="section-title mb-4">Beyond Coding</h2>
+        <div class="glass-card p-4 premium-card h-100">
+          <p class="text-muted mb-3">When I'm not writing code or managing community pages, you can find me engaged in the gaming world.</p>
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <i class="fas fa-gamepad text-accent fa-lg"></i>
+            <span class="text-white fw-semibold">Gaming Persona: <span class="text-accent">AADI PLAYS</span></span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <i class="fas fa-tshirt text-accent fa-lg"></i>
+            <span class="text-white fw-semibold">Jersey Number: <span class="text-accent">16</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container py-5 mt-4 fade-in">
+    <div class="glass-card p-5 mx-auto" style="max-width: 900px;">
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-4 mb-md-0 text-center text-md-start">
+          <h2 class="text-white fw-bold mb-3">Let's Work Together</h2>
+          <p class="text-muted mb-4">I'm currently available to take on new projects, roles, and collaborations.</p>
+          
+          <div class="d-flex align-items-center gap-3 mb-3 justify-content-center justify-content-md-start">
+            <div class="contact-icon-box"><i class="fas fa-envelope text-accent"></i></div>
+            <a href="mailto:adityasingh6082@gmail.com" class="text-white text-decoration-none">adityasingh6082@gmail.com</a>
+          </div>
+          <div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start">
+            <div class="contact-icon-box"><i class="fas fa-phone text-accent"></i></div>
+            <a href="tel:9335503283" class="text-white text-decoration-none">+91 9335503283</a>
+          </div>
+        </div>
+        
+        <div class="col-md-7 border-md-start border-secondary ps-md-5">
+          <form id="contactForm">
+            <div class="mb-3">
+              <input type="text" class="form-control custom-input" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control custom-input" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control custom-input" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent w-100 rounded-pill py-2 fw-bold">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="text-muted m-0">© 2026 Aditya Singh. Built with <i class="fas fa-heart text-danger mx-1"></i> and Code.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
