@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // 1. Typing Animation
     if(document.querySelector('.auto-type')) {
-        var typed = new Typed(".auto-type", {
+        new Typed(".auto-type", {
             strings: ["Frontend Developer", "Python Enthusiast", "Community Manager", "PSIT Student"],
             typeSpeed: 60,
             backSpeed: 40,
@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 
-    // 3. REAL Contact Form Handler (Connected to Formspree)
+    // 3. FIXED Contact Form Handler (Connected to Formspree)
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
         contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Default ko roko taaki hum AJAX use kar sakein
+            e.preventDefault(); // Browser reload ko rokta hai
             
             const btn = this.querySelector('button');
             const originalText = btn.innerText;
@@ -40,24 +40,25 @@ document.addEventListener("DOMContentLoaded", function() {
             // Form data ko collect karo
             const formData = new FormData(this);
 
-            // Formspree ko data bhejo
+            // Formspree ko data bhejo (this.action use karke)
             try {
-                const response = await fetch("https://formspree.io/f/xzdkygvz", {
-                    method: "POST",
+                const response = await fetch(this.action, {
+                    method: this.method,
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
-                    // Success State
+                    // SUCCESS: Data Dashboard mein chala gaya
                     btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Message Sent!';
                     btn.classList.replace('btn-accent', 'btn-success');
                     this.reset();
                 } else {
+                    // Server Error
                     throw new Error();
                 }
             } catch (error) {
-                // Error State
+                // ERROR: Network issue ya invalid ID
                 btn.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Error!';
                 btn.classList.replace('btn-accent', 'btn-danger');
             }
@@ -96,10 +97,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // 5. Scroll Progress Bar
     window.addEventListener('scroll', () => {
         const scrollProgress = document.getElementById('scroll-progress');
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY;
-        const progress = Math.ceil((scrolled / scrollable) * 100);
-        if(scrollProgress) scrollProgress.style.width = `${progress}%`;
+        if(scrollProgress) {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            const progress = Math.ceil((scrolled / scrollable) * 100);
+            scrollProgress.style.width = `${progress}%`;
+        }
     });
 
     // 6. Back to Top Button
@@ -150,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 8. Initialize Vanilla Tilt
+    // 8. Initialize Vanilla Tilt (3D Effects)
     if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".glass-card, .skill-box, .profile-img-container, .project-card"), {
             max: 12,
