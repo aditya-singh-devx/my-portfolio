@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1. Typing Animation
     if(document.querySelector('.auto-type')) {
         var typed = new Typed(".auto-type", {
-            strings: ["Frontend Developer", "Python Enthusiast", "Community Manager"],
+            strings: ["Frontend Developer", "Python Enthusiast", "Community Manager", "PSIT Student"],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true
@@ -24,22 +24,50 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 
-    // 3. Contact Form Dummy Handler
+    // 3. REAL Contact Form Handler (Connected to Formspree)
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Default ko roko taaki hum AJAX use kar sakein
+            
             const btn = this.querySelector('button');
             const originalText = btn.innerText;
             
-            btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Message Sent!';
-            btn.classList.replace('btn-accent', 'btn-success');
-            
-            this.reset();
-            
+            // Button state: Sending...
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            btn.disabled = true;
+
+            // Form data ko collect karo
+            const formData = new FormData(this);
+
+            // Formspree ko data bhejo
+            try {
+                const response = await fetch("https://formspree.io/f/xzdkygvz", {
+                    method: "POST",
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Success State
+                    btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Message Sent!';
+                    btn.classList.replace('btn-accent', 'btn-success');
+                    this.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                // Error State
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Error!';
+                btn.classList.replace('btn-accent', 'btn-danger');
+            }
+
+            // Button ko 3 second baad normal kardo
             setTimeout(() => {
                 btn.innerText = originalText;
-                btn.classList.replace('btn-success', 'btn-accent');
+                btn.classList.remove('btn-success', 'btn-danger');
+                btn.classList.add('btn-accent');
+                btn.disabled = false;
             }, 3000);
         });
     }
@@ -52,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= (sectionTop - 200)) {
+            if (window.pageYOffset >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
@@ -71,21 +99,23 @@ document.addEventListener("DOMContentLoaded", function() {
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
         const scrolled = window.scrollY;
         const progress = Math.ceil((scrolled / scrollable) * 100);
-        scrollProgress.style.width = `${progress}%`;
+        if(scrollProgress) scrollProgress.style.width = `${progress}%`;
     });
 
     // 6. Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if(backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // 7. Custom Cursor Effect
     const cursorDot = document.querySelector('[data-cursor-dot]');
@@ -105,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }, { duration: 500, fill: "forwards" });
         });
 
-        // Cursor hover effects on links and cards
         const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-box, .premium-card');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -121,9 +150,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 8. Initialize Vanilla Tilt (3D Hover Effect for Cards)
+    // 8. Initialize Vanilla Tilt
     if (typeof VanillaTilt !== 'undefined') {
-        VanillaTilt.init(document.querySelectorAll(".glass-card, .skill-box, .profile-img-container"), {
+        VanillaTilt.init(document.querySelectorAll(".glass-card, .skill-box, .profile-img-container, .project-card"), {
             max: 12,
             speed: 400,
             glare: true,
