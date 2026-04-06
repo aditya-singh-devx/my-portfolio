@@ -400,15 +400,15 @@
         </div>
         
         <div class="col-md-7 border-md-start border-secondary ps-md-5">
-          <form id="contactForm">
+          <form action="https://formspree.io/f/xzdkygvz" method="POST" id="contactForm">
             <div class="mb-3">
-              <input type="text" class="form-control custom-input" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control custom-input" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control custom-input" placeholder="Your Email" required>
+              <input type="email" name="email" class="form-control custom-input" placeholder="Your Email" required>
             </div>
             <div class="mb-3">
-              <textarea class="form-control custom-input" rows="4" placeholder="Your Message" required></textarea>
+              <textarea name="message" class="form-control custom-input" rows="4" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-accent w-100 rounded-pill py-2 fw-bold">Send Message</button>
           </form>
