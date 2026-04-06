@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. Typing Animation
+    // 1. Typing Animation (Typing effect in Hero Section)
     if(document.querySelector('.auto-type')) {
         new Typed(".auto-type", {
             strings: ["Frontend Developer", "Python Enthusiast", "Community Manager", "PSIT Student"],
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 2. Scroll Fade-In Animation
+    // 2. Scroll Fade-In Animation (Cards appearing on scroll)
     const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
         contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Browser reload ko rokta hai
+            e.preventDefault(); 
             
             const btn = this.querySelector('button');
             const originalText = btn.innerText;
@@ -37,10 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             btn.disabled = true;
 
-            // Form data ko collect karo
             const formData = new FormData(this);
 
-            // Formspree ko data bhejo (this.action use karke)
             try {
                 const response = await fetch(this.action, {
                     method: this.method,
@@ -49,21 +47,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
 
                 if (response.ok) {
-                    // SUCCESS: Data Dashboard mein chala gaya
                     btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>Message Sent!';
                     btn.classList.replace('btn-accent', 'btn-success');
                     this.reset();
                 } else {
-                    // Server Error
                     throw new Error();
                 }
             } catch (error) {
-                // ERROR: Network issue ya invalid ID
                 btn.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Error!';
                 btn.classList.replace('btn-accent', 'btn-danger');
             }
 
-            // Button ko 3 second baad normal kardo
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.classList.remove('btn-success', 'btn-danger');
@@ -94,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // 5. Scroll Progress Bar
+    // 5. Scroll Progress Bar (Top bar)
     window.addEventListener('scroll', () => {
         const scrollProgress = document.getElementById('scroll-progress');
         if(scrollProgress) {
@@ -120,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 7. Custom Cursor Effect
+    // 7. Custom Cursor Effect (Smooth trailing effect)
     const cursorDot = document.querySelector('[data-cursor-dot]');
     const cursorOutline = document.querySelector('[data-cursor-outline]');
 
@@ -135,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
+            }, { duration: 800, fill: "forwards" });
         });
 
         const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-box, .premium-card');
@@ -153,14 +147,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 8. Initialize Vanilla Tilt (3D Effects)
+    // 8. Initialize Vanilla Tilt (ULTRA SMOOTH & SLOW VERSION)
     if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".glass-card, .skill-box, .profile-img-container, .project-card"), {
-            max: 12,
-            speed: 400,
+            max: 5,           // Degree of tilt (Lower = Smoother)
+            speed: 1500,      // Animation speed (Higher = Slower)
             glare: true,
-            "max-glare": 0.15,
-            scale: 1.02
+            "max-glare": 0.05,
+            scale: 1.01,      
+            easing: "cubic-bezier(.03,.98,.52,.99)", 
+            perspective: 1200,
+            transition: true
         });
     }
 });
